@@ -1,24 +1,21 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">Navbar</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item"><a className="btn btn-dark mx-1" aria-current="page" href="/">Home</a></li>
-        <li className="nav-item"><a className="btn btn-dark mx-1" aria-current="page" href="/About">About</a></li>
-        <li className="nav-item"><a className="btn btn-dark mx-1" aria-current="page" href="/Order">Order</a></li>
-      </ul>
-     <div><button className='btn btn-dark'><a href="/SingUp">SignUp</a></button> </div>
+    <div className="w3-top3">
+  <div className="w3-bar w3-white w3-wide w3-padding w3-card">
+    <Link href="#home" className="w3-bar-item w3-button" to='/'><b>BUYit</b></Link>
+    <Link className="w3-bar-item w3-button" to="/">Home</Link>
+    <a className="w3-bar-item w3-button" href="/Product">Products</a>
+    <Link className="w3-bar-item w3-button" to="/About">About</Link>
+    <div className="w3-right w3-hide-small">
+    <Link className="w3-bar-item w3-button" to="/Cart"><i className="fa-solid fa-cart-plus" style={{height : "20px"}}></i></Link>
+      <Link className="w3-bar-item w3-button" to="/LogIn">LogIn</Link>
+      <Link className="w3-bar-item w3-button" to="/SignUp">SignUp</Link>
     </div>
   </div>
-</nav>
+</div>
     </div>
   )
 }
