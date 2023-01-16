@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from "react-router-dom"
+
 const Navbar = () => {
+  let [ log , Setlog ] = useState(false)
+   const logOut = ()=>{
+       
+   }
   return (
     <div>
     <div className="w3-top3">
@@ -10,7 +15,7 @@ const Navbar = () => {
     <a className="w3-bar-item w3-button" href="/Product">Products</a>
     <Link className="w3-bar-item w3-button" to="/About">About</Link>
     <div className="w3-right w3-hide-small">
-    <Link className="w3-bar-item w3-button" to="/Cart"><i className="fa-solid fa-cart-plus" style={{height : "20px"}}></i></Link>
+    <Link className="w3-bar-item w3-button" to="/card"><i className="fa-solid fa-cart-plus" style={{height : "20px"}}></i></Link>
       <Link className="w3-bar-item w3-button" to="/LogIn">LogIn</Link>
       <Link className="w3-bar-item w3-button" to="/SignUp">SignUp</Link>
     </div>

@@ -7,20 +7,27 @@ import Order from './Components/Order/Order';
 import SignUp from './Components/SignUp/SignUp';
 import Card from './Components/card/Card'
 import Product from './Components/Product/Product';
+import ProductState from './Context/ProductState';
+import ProductBuy from './Components/Product/ProductBuy';
+import LogIn from './Components/Login/Login';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      <ProductState>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/About' element={<About/>}/>
         <Route path='/Order' element={<Order/>}/>
         <Route path='/SignUp' element={<SignUp/>}/>
+        <Route path='/LogIn' element={<LogIn/>} />
         <Route path='/card' element={<Card/>}/>
         <Route path='/Product' element={<Product/>}/>
+        <Route path='/ProductBuy' element={<ProductBuy/>}/>
       </Routes>
+      </ProductState>
       </BrowserRouter>
     </div>
   );

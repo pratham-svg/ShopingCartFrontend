@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import ProductContext from '../../Context/ProductContext'
 
 const ProductCard = (props) => {
+  const context = useContext(ProductContext)
+  let {ProductData} = context
     let checkPops = ()=>{
-    console.log(props.product._id)
+      ProductData(props.product._id)
     }
   return (
     <div>
@@ -27,7 +30,7 @@ const ProductCard = (props) => {
                   </div>
                 </div>
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">Add to cart</a>
+                  <div className="text-center"><button onClick={checkPops}>Buy Now</button> 
                             </div>
                 </div>
               </div>
