@@ -13,11 +13,10 @@ const ProductCard = (props) => {
               <div className="card h-100">
 
                 <img className="card-img-top" src={props.product.productImage} style={{height : "300px"}} alt="..." />
-
                 <div className="card-body p-4">
                   <div className="text-center">
 
-                    <h5 className="fw-bolder">{props.product.title} </h5>
+                    <h5 className="fw-bolder">{props.product.style} </h5>
 
                     <div className="d-flex justify-content-center small text-warning mb-2">
                       <div className="bi-star-fill"></div>
@@ -30,7 +29,7 @@ const ProductCard = (props) => {
                   </div>
                 </div>
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><button onClick={checkPops}>Buy Now</button> 
+                  <div className="text-center"><button className="btn btn-dark" onClick={checkPops}>Buy It</button> 
                             </div>
                 </div>
               </div>

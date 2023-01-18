@@ -56,6 +56,7 @@ const ProductBuy = () => {
 							</div>
 							<h4 className="price">current price: <span>{ProductBuy.price}</span></h4>
 							<p className="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+							<h4 >Description - {ProductBuy.description}</h4>
 							<h5 className="sizes">sizes:
 							{ProductBuy.availableSizes.map((e)=>	<span className="size" data-toggle="tooltip" title="small">{e}</span> )}
 							</h5>

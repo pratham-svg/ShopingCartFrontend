@@ -7,6 +7,8 @@ const Product = () => {
   const [ Product , SetProduct ] = useState([])
   const [ Gender , SetGender ] = useState('gender')
   const [ Category , SetCategory] = useState([])
+  const [Brand , SetBrand] = useState(["Gucci","Chanel","Burberry","Cartier","Prada","Levi's","Wrong","Hrx","Puma","Nike","Bata","Flying machine","Libas","Aurelia","Biba"])
+  const [Price , SetPrice] = useState(["Above Rs.500" , "Rs.1000-Rs.2000", "Rs.2000-Rs.5000", "Rs.5000-Rs.10000","Above Rs10000"])
   const ProductData = async ()=>{
    try{ 
     const data =await axios(`/products/${Gender}`)
@@ -38,7 +40,7 @@ const Product = () => {
       <header className="bg-dark py-5">
         <div className="container px-4 px-lg-5 my-5">
           <div className="text-center text-white">
-            <h1 className="display-4 fw-bolder">Top Categories to choose from</h1>
+            <h1 className="display-4 fw-bolder">Everything at one place</h1>
             <p className="lead fw-normal text-white-50 mb-0">FASHION STORE</p>
           </div>
         </div>
@@ -48,8 +50,8 @@ const Product = () => {
   <div className="w3-bar w3-white w3-wide w3-padding w3-card">
  <h4><button className="w3-bar-item w3-button" value={'men'}  onClick={GenderHandler}  style={{marginLeft : "40%"}}>Man</button></h4>
   <h4>  <button className="w3-bar-item w3-button" value={'Women'}  onClick={GenderHandler} >Women</button>  </h4>
-  <h4>  <button className="w3-bar-item w3-button" value={'boys'} onClick={GenderHandler}  >Boys</button> </h4>
-  <h4>  <button className="w3-bar-item w3-button" value={'girls'} onClick={GenderHandler}  >Girls</button> </h4>
+  <h4>  <button className="w3-bar-item w3-button" value={'Boys'} onClick={GenderHandler}  >Boys</button> </h4>
+  <h4>  <button className="w3-bar-item w3-button" value={'Girls'} onClick={GenderHandler}  >Girls</button> </h4>
   </div>
 </div>
 <div className="container-fluid">
@@ -90,12 +92,24 @@ const Product = () => {
 </div>
   </div>
 </div>
-<div className="card" style={{width : '150%'}}>
+<div className="card" style={{width : '120%'}}>
   <div className="card-body">
-    <h5 className="card-title">Category</h5>
-    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <a href="#" className="card-link">Card link</a>
-    <a href="#" className="card-link">Another link</a>
+    <h5 className="card-title">Brands</h5>
+   {Brand.map((e)=><div className="form-check">
+  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+  <label className="form-check-label" htmlFor="flexCheckDefault">{e}
+  </label>
+</div>) }
+  </div>
+</div>
+<div className="card" style={{width : '120%'}}>
+  <div className="card-body">
+    <h5 className="card-title">Price</h5>
+   {Price.map((e)=><div className="form-check">
+  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+  <label className="form-check-label" htmlFor="flexCheckDefault">{e}
+  </label>
+</div>) }
   </div>
 </div>
 </div> 

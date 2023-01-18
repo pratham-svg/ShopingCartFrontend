@@ -10,6 +10,7 @@ import Product from './Components/Product/Product';
 import ProductState from './Context/ProductState';
 import ProductBuy from './Components/Product/ProductBuy';
 import LogIn from './Components/Login/Login';
+import PageNotFound from './Components/404 Not Found/NotFound';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/card' element={<Card/>}/>
         <Route path='/Product' element={<Product/>}/>
         <Route path='/ProductBuy' element={<ProductBuy/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
       </Routes>
       </ProductState>
       </BrowserRouter>
