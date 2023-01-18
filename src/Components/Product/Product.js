@@ -104,7 +104,7 @@ const Product = () => {
 </div>
 <div className="card" style={{width : '120%'}}>
   <div className="card-body">
-    <h5 className="card-title">Price</h5>
+    <h5 className="card-title">Pricegit </h5>
    {Price.map((e)=><div className="form-check">
   <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
   <label className="form-check-label" htmlFor="flexCheckDefault">{e}
