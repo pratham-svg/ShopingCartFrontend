@@ -27,6 +27,7 @@ function App() {
         <Route path='/card' element={<Card/>}/>
         <Route path='/Product' element={<Product/>}/>
         <Route path='/ProductBuy' element={<ProductBuy/>}/>
+        <Route path='/Oder' element={<Order/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
       </ProductState>

@@ -1,68 +1,85 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+.imgAbout{
+  border-radius: 200px;
+}
+
+.Containerabout{
+  text-align: center;
+}
+
+.headerAbout{
+  padding-top: 60px;
+  color: #444;
+  font-size: 20px;
+  margin: auto;
+  line-height: 50px;
+  cursor: pointer;
+  
+}
+.headerAbout :hover{
+  color: aqua;
+}
+
+.sun-ContainerAbout{
+  max-width: 1200px;
+  margin: auto;
+  padding: 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.teamsAbout{
+  margin: 10px;
+  padding: 22px;
+  max-width: 28%;
+  cursor: pointer;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+.teamsAbout :hover{
+  background: #ddd;
+  border-radius: 12px;
+}
+.nameAbout{
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.desigAbout{
+  font-style: italic;
+  color: #888;
+}
+
+.aboutAbout{
+  margin: 20px 0;
+  font-weight: lighter;
+  font-size: 22px;
+  color: #4e4e4e;
+}
+
+.social-links{
+  margin: 14px;
+}
+
+.social-links a{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  transition: 0.4s;
+}
+
+.social-links a:hover{
+  transform: scale(1.9);
+}
+
+.social-links a i{
+  color: #444
+}
+
+@media screen and (max-width:600px) {
+  .teamsAbout{
+    max-width: 100%;
   }
   
-  html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
-  
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {
-    background-color: #555;
-  }
-  
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
+}

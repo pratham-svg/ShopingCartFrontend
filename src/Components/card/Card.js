@@ -1,29 +1,42 @@
 import axios from 'axios';
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductInCard from './ProductInCard';
+import { useNavigate } from 'react-router-dom';
+import ProductContext from '../../Context/ProductContext'
+import context from 'react-bootstrap/esm/AccordionContext';
 
 const Card = () => {
+  let navigate = useNavigate()
+   let Context = useContext(ProductContext)
+   let {OderData } = Context
   const [ Product , SetProduct ] = useState([])
   const [ Card , SetCard ] = useState({})
   let CardDetails = async ()=>{
     try{
       const data = await axios.get(`/users/${localStorage.getItem('userId')}/cart`)
-      console.log(data.data.data)
       if(data.data.data){
       SetCard(data.data.data)
       SetProduct(data.data.data.items)
      }
     }catch(err)
     {
+      window.alert("Please LogIn")
+      navigate('/LogIn')
+    }
+  }
+  const ConfirmOder = async ()=>{
+    try{
+      const data = await axios.post(`/users/${localStorage.getItem('userId')}/orders`,{'cartId' : Card._id })
+      OderData(data.data.data._id)
+      console.log('at app',data.data.data._id)
+    }catch(err){
       window.alert("at error")
     }
   }
     useEffect(() => {
       CardDetails()
     }, [])
-    
-  
   return (
     <div>
    <div>
@@ -59,7 +72,7 @@ const Card = () => {
                 <b className="pl-md-4">SUBTOTAL<span className="pl-md-4"> {Card.totalPrice} </span></b>
               </div>
               <div>
-                <button className="btn btn-sm bg-dark text-white px-lg-5 px-3">CONTINUE</button>
+                <button className="btn btn-sm bg-dark text-white px-lg-5 px-3" onClick={ConfirmOder}>Proceed to Buy</button>
               </div>
             </div>
           </div>

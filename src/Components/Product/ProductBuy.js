@@ -2,8 +2,10 @@ import React, { useState , useEffect } from 'react'
 import { useContext } from 'react'
 import axios from 'axios'
 import ProductContext from '../../Context/ProductContext'
+import { useNavigate } from 'react-router-dom'
 
 const ProductBuy = () => {
+	let navigate = useNavigate()
     const [ ProductBuy , SetProductBuy ] = useState({})
     const context = useContext(ProductContext)
     const { ProductId } = context
@@ -16,8 +18,12 @@ const ProductBuy = () => {
     const CardAdder = async (e)=>
     {
       e.preventDefault()
-      let cardData = await axios.post(`/users/${localStorage.getItem('userId')}/cart`,{ productId : ProductId })
-      console.log(cardData)
+      try{let cardData = await axios.post(`/users/${localStorage.getItem('userId')}/cart`,{ productId : ProductId })
+      console.log(cardData)}
+	  catch(err){
+		window.alert('Please LogIn')
+		navigate('/LogIn')
+	  }
     }
     useEffect(() => {
         Product()

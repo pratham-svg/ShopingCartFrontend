@@ -38,10 +38,12 @@ const LogIn = () => {
     try{let data = await axios.post('/login',{...inputdata})
     localStorage.setItem("token", data.data.userId.token);
     localStorage.setItem("userId", data.data.userId.userId);
+    window.alert("succesfully logIn")
+    navigate('/')
 }
     catch(err)
     {
-        window.alert("at error")
+        window.alert("Please enter valid credetials")
     }
    }
   useEffect(() => {
@@ -99,7 +101,7 @@ const LogIn = () => {
           <ToastContainer position="top-center" />
           <p className="text-center text-muted mt-3 mb-0">
             Don't have an account?{" "}
-            <Link to="/register" className="fw-bold text-body">
+            <Link to="/SignUp" className="fw-bold text-body">
               <u>Register</u>
             </Link>
           </p>
