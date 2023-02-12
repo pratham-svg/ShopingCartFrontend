@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const express = require('express');
+const mongoose = require('mongoose');
+const multer = require('multer');
+const route = require('./route/routes.js');
+const app=express();
+const port = process.env.PORT || 3001;
+const url ="mongodb+srv://Pratham_Panchariya:shree79766@cluster0.yd3rrae.mongodb.net/Project-5";
+mongoose.set('strictQuery', true);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+app.use(multer().any());
+app.use(express.json());
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+mongoose.connect(url)
+.then(() => console.log("Mongoose is Connected"))
+.catch((err) => console.log(err));
+
+app.use('/',route);
+
+app.listen(port, () => console.log(`Server is Running Succesfully ${port}`));
