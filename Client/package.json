@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "backend": "cd shopping-site && npm start",
+    "backend": "cd.. && cd Server && npm start",
     "pratham": "concurrently \"react-scripts start\" \"npm run backend\""
   },
   "eslintConfig": {
