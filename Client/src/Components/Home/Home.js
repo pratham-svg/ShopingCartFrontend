@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import home1 from  '../../image/homePage.png.jpg'
 import home2 from '../../image/HomePage1.jpg'
 import home3 from '../../image/HomePage2.jpg'
+import Spiner from '../Spinner/Spinner'
+
 const Home = () => {
+  
   return (
     <div>
     <div>   
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<div id="carouselBasicExample" className="carousel slide carousel-fade" data-mdb-ride="carousel">
 
-  <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+  <div className="carousel-indicators">
+    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" className="active"
       aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
       aria-label="Slide 2"></button>
@@ -19,42 +22,42 @@ const Home = () => {
   </div>
 
 
-  <div class="carousel-inner">
+  <div className="carousel-inner">
 
-    <div class="carousel-item active">
+    <div className="carousel-item active">
       <img src={home1} alt="Sunset Over the City" style={{width : "100%" }} />
-      <div class="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-none d-md-block">
       </div>
     </div>
 
   
-    <div class="carousel-item">
+    <div className="carousel-item">
       <img src={home2}
         alt="Canyon at Nigh" style={{width : "100%"}} />
-      <div class="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-none d-md-block">
       </div>
     </div>
 
     
 
 
-    <div class="carousel-item">
-      <img src={home3} class="d-block w-100"
+    <div className="carousel-item">
+      <img src={home3} className="d-block w-100"
         alt="Cliff Above a Stormy Sea" />
-      <div class="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-none d-md-block">
       </div>
     </div>
   </div>
 
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample"
+  <button className="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample"
     data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample"
+  <button className="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample"
     data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
   </button>
 </div>
       <section className="py-5">
@@ -69,12 +72,12 @@ const Home = () => {
                   <div className="text-center">
 
                     <h5 className="fw-bolder">Fancy Product</h5>
-                    ₹40.00 - ₹80.00
+                    ₹4000.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/menu/product">View options</Link>
+                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/Product">View options</Link>
                   </div>
                 </div>
               </div>
@@ -100,13 +103,13 @@ const Home = () => {
                       <div className="bi-star-fill"></div>
                     </div>
 
-                    <span className="text-muted text-decoration-line-through">₹20.00</span>
-                    ₹18.00
+                    <span className="text-muted text-decoration-line-through">₹2000.00</span>
+                    ₹1800.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/menu/product">View options</Link>
+                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/Product">View options</Link>
                   </div>
                 </div>
               </div>
@@ -124,13 +127,13 @@ const Home = () => {
 
                     <h5 className="fw-bolder">Sale Item</h5>
 
-                    <span className="text-muted text-decoration-line-through">₹50.00</span>
-                    ₹25.00
+                    <span className="text-muted text-decoration-line-through">₹5000.00</span>
+                    ₹2500.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/menu/product">View options</Link>
+                  <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to="/Product">View options</Link>
                   </div>
                 </div>
               </div>
@@ -153,12 +156,12 @@ const Home = () => {
                       <div className="bi-star-fill"></div>
                     </div>
 
-                    ₹40.00
+                    ₹4000.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">View options</a>
+                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/Product">View options</a>
                             </div>
                 </div>
               </div>
@@ -176,13 +179,13 @@ const Home = () => {
 
                     <h5 className="fw-bolder">Sale Item</h5>
 
-                    <span className="text-muted text-decoration-line-through">₹50.00</span>
-                    ₹25.00
+                    <span className="text-muted text-decoration-line-through">₹5000.00</span>
+                    ₹2500.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">View options</a>
+                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/Product">View options</a>
                   </div>
                 </div>
               </div>
@@ -197,12 +200,12 @@ const Home = () => {
 
                     <h5 className="fw-bolder">Fancy Product</h5>
 
-                    ₹120.00 - ₹280.00
+                    ₹1800.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">View options</a>
+                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/Product">View options</a>
                   </div>
                 </div>
               </div>
@@ -229,12 +232,12 @@ const Home = () => {
                     </div>
 
                     <span className="text-muted text-decoration-line-through">₹20.00</span>
-                    ₹18.00
+                    ₹1800.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">View options</a>
+                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/Product">View options</a>
                             </div>
                 </div>
               </div>
@@ -257,12 +260,12 @@ const Home = () => {
                       <div className="bi-star-fill"></div>
                     </div>
 
-                    ₹40.00
+                    ₹4000.00
                   </div>
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/">View options</a>
+                  <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="/Product">View options</a>
                   </div>
                 </div>
               </div>
@@ -277,26 +280,26 @@ const Home = () => {
 
 					<section className="mb-4">
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-facebook-f"></i></a>
 
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-twitter"></i></a>
 
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-google"></i></a>
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-instagram"></i></a>
 
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-linkedin-in"></i></a>
 
 
-						<a className="btn btn-outline-light btn-floating m-1" href="/" role="button"
+						<a className="btn btn-outline-light btn-floating m-1" href="/Product" role="button"
 						><i className="fab fa-github"></i></a>
 					</section>
 

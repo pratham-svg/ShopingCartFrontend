@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import axios from 'axios'
 import ProductContext from '../../Context/ProductContext'
 import { useNavigate } from 'react-router-dom'
+import Spiner from '../Spinner/Spinner'
 
 const ProductBuy = () => {
 	let navigate = useNavigate()
@@ -18,8 +19,10 @@ const ProductBuy = () => {
     const CardAdder = async (e)=>
     {
       e.preventDefault()
-      try{let cardData = await axios.post(`/users/${localStorage.getItem('userId')}/cart`,{ productId : ProductId })
-      console.log(cardData)}
+      try{
+		let cardData = await axios.post(`/users/${localStorage.getItem('userId')}/cart`,{ productId : ProductId })
+		window.alert("Product added successfully")
+	}
 	  catch(err){
 		window.alert('Please LogIn')
 		navigate('/LogIn')
@@ -31,7 +34,7 @@ const ProductBuy = () => {
     
   return (
     <div>
-      { Object.keys(ProductBuy).length != 0  &&  <div className="container1">
+      { Object.keys(ProductBuy).length != 0  ?  <div className="container1">
 			<div className="card1">
 				<div className="container-fliud">
 					<div className="wrapper row">
@@ -138,7 +141,7 @@ const ProductBuy = () => {
 				</div>
 
 			</footer>
-		</div>}
+		</div> : <Spiner></Spiner> }
     </div>
   )
 }

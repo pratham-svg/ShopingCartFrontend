@@ -1,5 +1,6 @@
 import React,{useContext} from 'react'
 import ProductContext from '../../Context/ProductContext'
+import Spiner from '../Spinner/Spinner'
 
 const ProductCard = (props) => {
   const context = useContext(ProductContext)
@@ -9,7 +10,7 @@ const ProductCard = (props) => {
     }
   return (
     <div>
-       {props.product && <div className="col mb-5">
+       {props.product ? <div className="col mb-5">
               <div className="card h-100">
 
                 <img className="card-img-top" src={props.product.productImage} style={{height : "300px"}} alt="..." />
@@ -33,7 +34,7 @@ const ProductCard = (props) => {
                             </div>
                 </div>
               </div>
-            </div>}
+            </div> : <Spiner></Spiner>}
     </div>
   )
 }

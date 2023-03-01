@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import { Spinner } from 'react-bootstrap'
 
 const ProductInCard = (props) => {
     const {price , productImage , title , _id } = props.Product.productId
@@ -8,14 +9,13 @@ const ProductInCard = (props) => {
     } 
     const increaseItem = async ()=>{
         let cardData = await axios.post(`/users/${localStorage.getItem('userId')}/cart`,{ productId : _id })
-        console.log(cardData)
     }
     const decreaseItem = async ()=>{
         const data = await axios.put(`/users/${localStorage.getItem('userId')}/cart`, {productId : _id ,removeProduct : 1 })
     }
   return (
     <div>
-       <div className="d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile">
+     { props.Product ?   <div className="d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile">
               <div className="d-flex flex-row align-items-center">
                 <div><img src={productImage}  width="150" height="150" alt="" id="image" /></div>
                 <div className="d-flex flex-column pl-md-3 pl-1">
@@ -33,7 +33,7 @@ const ProductInCard = (props) => {
               </div>
               <div className="pl-md-0 pl-1"><b>₹{props.Product.quantity * price }</b></div>
              <a href='/card'>  <div className="close" onClick={DeleteProduct}>&times;</div></a>
-            </div>
+            </div> :<Spinner></Spinner> }
     </div>
   )
 }

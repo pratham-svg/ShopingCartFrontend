@@ -5,6 +5,7 @@ import ProductInCard from './ProductInCard';
 import { useNavigate } from 'react-router-dom';
 import ProductContext from '../../Context/ProductContext'
 import context from 'react-bootstrap/esm/AccordionContext';
+import Spiner from '../Spinner/Spinner';
 
 const Card = () => {
   let navigate = useNavigate()
@@ -29,7 +30,6 @@ const Card = () => {
     try{
       const data = await axios.post(`/users/${localStorage.getItem('userId')}/orders`,{'cartId' : Card._id })
       OderData(data.data.data._id)
-      console.log('at app',data.data.data._id)
     }catch(err){
       window.alert("at error")
     }
@@ -39,7 +39,7 @@ const Card = () => {
     }, [])
   return (
     <div>
-   <div>
+   {<div>
       <div className="container bg-white rounded-top mt-5" id="zero-pad">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-10 col-12 pt-3">
@@ -117,7 +117,7 @@ const Card = () => {
 				</div>
 
 			</footer>
-    </div>
+    </div>}
     </div>
   )
 }

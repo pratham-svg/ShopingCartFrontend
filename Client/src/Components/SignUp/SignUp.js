@@ -3,9 +3,58 @@ import { Card, Button, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+//import "react-toastify/dist/ReactToastify.css";
+
+//import { ToastContainer, toast } from "react-toastify";
+//import React, { useEffect, useState } from "react";
+//import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
 
+  // const [showspin, setShowSpin] = useState(true);
+
+   
+
+  // // const { useradd, setUseradd } = useContext(addData);
+  // console.log(navigate);
+  // // setInput Value
+  // const setInputValue = (e) => {
+  //   const { name, value } = e.target;
+  //   UseData({ ...inputdata, [name]: value });
+  // };
+
+  // //submit userdata
+  // const DataBase  = async (e) => {
+  //   e.preventDefault();
+
+  //   const { title, name, phone, email, password, street, city, pincode } = inputdata;
+
+  //   if (name === "") { toast.error("Name is Required !"); }
+  //   else if (title === "") { toast.error("Title is Required !"); }
+  //   else if (email === "") { toast.error("Email is Required !"); }
+  //   else if (!email.includes("@")) { toast.error("Enter Valid Email !"); }
+  //   else if (phone === "") { toast.error("Mobile is Required !"); }
+  //   else if (phone.length > 10) { toast.error("Enter Valid Mobile it should be 10 Digit only"); }
+  //   else if (city === "") { toast.error("City is Required !"); }
+  //   else if (pincode === "") { toast.error("Pincode is Required !"); }
+  //   else if (password === "") { toast.error("Password is Required !"); }
+  //   else if (street === " ") { toast.error("Street is Required !"); }
+  //   else {
+
+  //     const data = new FormData();
+  //     data.append("title", title);
+  //     data.append("name", name);
+  //     data.append("phone", phone);
+  //     data.append("email", email);
+  //     data.append("password", password);
+  //     data.append("street", street);
+  //     data.append("city", city);
+  //     data.append("pincode", pincode);
+
+  //   }
+  // }; 
+
+  // useEffect(() => { setTimeout(() => { setShowSpin(false); }, 1); }, []);
   const navigate = useNavigate();
   const [Data, UseData] = useState({
     title: "", name: "", phone: "", email: "", password: "", street: "", city: "", pincode: "" ,

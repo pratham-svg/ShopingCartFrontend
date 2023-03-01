@@ -23,10 +23,10 @@ const Navbar = () => {
     <Link className="w3-bar-item w3-button" to="/About">About</Link>
     <div className="w3-right w3-hide-small">
     <Link className="w3-bar-item w3-button" to="/card"><i className="fa-solid fa-cart-plus" style={{height : "20px"}}></i></Link>
-   <div  className='w3-bar-item'> {localStorage.getItem('token').length ===0 ? <div> 
-       <Link className="w3-bar-item w3-button" to="/LogIn">LogIn</Link>
-       <Link className="w3-bar-item w3-button" to="/SignUp">SignUp </Link> </div> :
-   <div> <button className="w3-bar-item w3-button" onClick={logOut}>LogOut</button></div> }</div>
+   <div  className='w3-bar-item'> {localStorage.getItem('token') === "" ? <div> 
+       <Link className="btn btn-light" to="/LogIn">LogIn</Link>
+       <Link className="btn btn-light" to="/SignUp">SignUp </Link> </div> :
+   <div> <button className="btn btn-light" onClick={logOut}>LogOut</button></div> }</div>
     </div>
   </div>
 </div>
